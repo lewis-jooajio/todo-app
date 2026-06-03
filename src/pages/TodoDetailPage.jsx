@@ -20,6 +20,7 @@ function TodoDetailPage() {
   }, [id])
 
   const handleDelete = async () => {
+    if (!window.confirm('정말로 삭제하시겠습니까?')) return
     const res = await fetch(`${API}/todos/${id}`, { method: 'DELETE' })
     if (res.ok) {
       navigate('/')

@@ -20,7 +20,7 @@ function HomePage() {
       body: JSON.stringify({ text }),
     })
     const newTodo = await res.json()
-    setTodos([...todos, newTodo])
+    setTodos([newTodo, ...todos])
   }
 
   async function toggleTodo(id) {

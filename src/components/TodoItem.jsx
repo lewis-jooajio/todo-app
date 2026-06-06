@@ -59,7 +59,6 @@ function TodoItem({ todo, onToggle, onEdit, onDelete }) {
             )}
           </div>
           <span className="todo-author">{todo.author}</span>
-          <span className="todo-date">{formatDate(todo.created_at)}</span>
         </>
       )}
     </li>

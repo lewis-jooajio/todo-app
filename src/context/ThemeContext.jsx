@@ -3,7 +3,9 @@ import { createContext, useContext, useState } from 'react'
 const ThemeContext = createContext()
 
 export function ThemeProvider({ children }) {
-  const [isDark, setIsDark] = useState(false)
+  const [isDark, setIsDark] = useState(
+    () => window.matchMedia('(prefers-color-scheme: dark)').matches
+  )
   const toggleTheme = () => setIsDark(prev => !prev)
 
   return (

@@ -1,13 +1,13 @@
-import { useState } from 'react'
+import useInput from '../hooks/useInput'
 
 function TodoInput({ onAdd }) {
-  const [text, setText] = useState('')
+  const [text, handleChange, reset] = useInput('')
 
   function handleSubmit(e) {
     e.preventDefault()
     if (text.trim() === '') return
     onAdd(text.trim())
-    setText('')
+    reset()
   }
 
   return (
@@ -15,7 +15,7 @@ function TodoInput({ onAdd }) {
       <input
         type="text"
         value={text}
-        onChange={e => setText(e.target.value)}
+        onChange={handleChange}
         placeholder="할 일을 입력하세요..."
       />
       <button type="submit">추가</button>

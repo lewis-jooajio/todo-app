@@ -1,6 +1,6 @@
 import TodoItem from './TodoItem'
 
-function TodoList({ todos, onToggle, onDelete }) {
+function TodoList({ todos, onToggle, onEdit, onDelete }) {
   if (todos.length === 0) {
     return <p className="empty">할 일이 없습니다. 추가해 보세요!</p>
   }
@@ -12,6 +12,7 @@ function TodoList({ todos, onToggle, onDelete }) {
           key={todo.id}
           todo={todo}
           onToggle={onToggle}
+          onEdit={onEdit}
           onDelete={onDelete}
         />
       ))}

@@ -216,6 +216,12 @@ nav a:hover {
   color: var(--accent);
 }
 
+.todo-date {
+  flex: 0 0 auto;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
 .todo-item.completed span,
 .todo-item.completed a {
   text-decoration: line-through;

@@ -49,13 +49,16 @@ function TodoItem({ todo, onToggle, onEdit, onDelete }) {
         </>
       ) : (
         <>
-          <Link to={`/todos/${todo.id}`}>{todo.text}</Link>
-          {isOwner && (
-            <>
-              <button onClick={() => setIsEditing(true)}>수정</button>
-              <button onClick={() => { if (window.confirm('정말로 삭제하시겠습니까?')) onDelete(todo.id) }}>삭제</button>
-            </>
-          )}
+          <div className="todo-main">
+            <Link to={`/todos/${todo.id}`}>{todo.text}</Link>
+            {isOwner && (
+              <div className="todo-actions">
+                <button onClick={() => setIsEditing(true)}>수정</button>
+                <button onClick={() => { if (window.confirm('정말로 삭제하시겠습니까?')) onDelete(todo.id) }}>삭제</button>
+              </div>
+            )}
+          </div>
+          <span className="todo-author">{todo.author}</span>
           <span className="todo-date">{formatDate(todo.created_at)}</span>
         </>
       )}

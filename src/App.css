@@ -182,7 +182,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 13px 14px;
+  padding: 13px 8px 13px 14px;
   border: 1.5px solid var(--item-border);
   border-radius: 11px;
   background: var(--item-bg);
@@ -216,10 +216,39 @@ nav a:hover {
   color: var(--accent);
 }
 
-.todo-date {
-  flex: 0 0 auto;
-  font-size: 0.78rem;
+.todo-main {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.todo-main a {
+  flex: unset;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.todo-author {
+  flex: 5;
+  font-size: 0.7rem;
   color: var(--text-muted);
+  align-self: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.todo-date {
+  flex: 2;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  align-self: center;
+  text-align: right;
 }
 
 .todo-item.completed span,
